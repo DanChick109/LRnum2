@@ -1,6 +1,6 @@
 import requests
 
-s_city = "Moscow,RU"
+s_city = "Moscow"
 appid = 'ca74b8c282b00eb346a4330255186f41'
 
 res = requests.get("http://api.openweathermap.org/data/2.5/weather",
@@ -18,7 +18,7 @@ res = requests.get("http://api.openweathermap.org/data/2.5/forecast",
 data = res.json()
 print("Прогноз погоды на неделю:")
 for i in data['list']:
-    print("Дата <", i['dt_txt'], "> \r\nТемпература <",
-          '{0:+3.0f}'.format(i['main']['temp']), "> \r\nПогодные условия <",
+    print("Дата: <", i['dt_txt'], "> \r\nТемпература: <",
+          '{0:+3.0f}'.format(i['main']['temp']), "> \r\nПогодные условия: <",
           i['weather'][0]['description'], ">")
-    print("____________________________")
+    print("----------------------------")

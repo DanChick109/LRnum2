@@ -1,6 +1,6 @@
 import requests
 
-s_city = "Moscow,RU"
+s_city = "Moscow"
 appid = 'ca74b8c282b00eb346a4330255186f41'
 
 res = requests.get("http://api.openweathermap.org/data/2.5/weather",
@@ -22,4 +22,4 @@ for i in data['list']:
           '{0:+3.0f}'.format(i['wind']['speed']), ">")
     print("Температура:  <",
           '{0:+3.0f}'.format(i['main']['temp']), ">")
-    print("____________________________")
+    print("----------------------------")
